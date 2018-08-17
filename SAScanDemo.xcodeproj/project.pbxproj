@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC35021D21265A4A00EC6574 /* SAScanCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35021C21265A4A00EC6574 /* SAScanCtrl.m */; };
 		CC69FBA321264F2900D7D6FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA221264F2900D7D6FD /* AppDelegate.m */; };
 		CC69FBA621264F2900D7D6FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA521264F2900D7D6FD /* ViewController.m */; };
 		CC69FBA921264F2900D7D6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC69FBA721264F2900D7D6FD /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC35021B21265A4A00EC6574 /* SAScanCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAScanCtrl.h; sourceTree = "<group>"; };
+		CC35021C21265A4A00EC6574 /* SAScanCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAScanCtrl.m; sourceTree = "<group>"; };
 		CC69FB9E21264F2900D7D6FD /* SAScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC69FBA121264F2900D7D6FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC69FBA221264F2900D7D6FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,9 +42,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC35021A21265A3600EC6574 /* SAScan */ = {
+			isa = PBXGroup;
+			children = (
+				CC35021B21265A4A00EC6574 /* SAScanCtrl.h */,
+				CC35021C21265A4A00EC6574 /* SAScanCtrl.m */,
+			);
+			path = SAScan;
+			sourceTree = "<group>";
+		};
 		CC69FB9521264F2900D7D6FD = {
 			isa = PBXGroup;
 			children = (
+				CC35021A21265A3600EC6574 /* SAScan */,
 				CC69FBA021264F2900D7D6FD /* SAScanDemo */,
 				CC69FB9F21264F2900D7D6FD /* Products */,
 			);
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC69FBA621264F2900D7D6FD /* ViewController.m in Sources */,
+				CC35021D21265A4A00EC6574 /* SAScanCtrl.m in Sources */,
 				CC69FBB121264F2A00D7D6FD /* main.m in Sources */,
 				CC69FBA321264F2900D7D6FD /* AppDelegate.m in Sources */,
 			);
