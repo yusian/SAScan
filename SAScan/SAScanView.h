@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SAScanView : UIView
-@property (nonatomic, strong) UIImageView *scanLine;
 - (void)startAnimation;
 - (void)stopAnimation;
 @end

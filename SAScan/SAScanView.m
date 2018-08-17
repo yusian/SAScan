@@ -7,7 +7,9 @@
 //
 
 #import "SAScanView.h"
-
+@interface SAScanView ()
+@property (nonatomic, strong) UIImageView *scanLine;
+@end
 @implementation SAScanView
 - (instancetype)initWithFrame:(CGRect)frame
 {

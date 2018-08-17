@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAScan"
-  s.version      = "0.0.4"
+  s.version      = "0.0.6"
   s.summary      = "一款轻量级二维码扫描组件"
 
   # This description is used to generate tags and improve search results.

@@ -31,6 +31,7 @@
 - (void)scan
 {
     SAScanCtrl *scan = [[SAScanCtrl alloc] initWithBlock:^(NSString *string) {
+        // 处理扫描后的输出结果
         [[[UIAlertView alloc] initWithTitle:@"扫描结果"
                                     message:string
                                    delegate:nil
