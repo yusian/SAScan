@@ -11,9 +11,10 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface SAScanCtrl ()<AVCaptureMetadataOutputObjectsDelegate>
-@property (nonatomic, strong) AVCaptureSession *session;
-@property (nonatomic, strong) AVAudioPlayer    *player;
-@property (nonatomic, strong) SAScanView       *scan;
+@property (nonatomic, strong) AVCaptureSession  *session;
+@property (nonatomic, strong) AVAudioPlayer     *player;
+@property (nonatomic, strong) AVCaptureDevice   *device;
+@property (nonatomic, strong) SAScanView        *scan;
 @property (nonatomic, assign) BOOL              autoPop;
 @end
 
@@ -63,26 +64,33 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    if (nil == self.device) return;
     if (NO == self.session.running) [self.session startRunning];
-    //    if (0 == self.session.inputs.count) [SAAlertAction actionMessage:@"请在手机设置中允许本应用使用系统相机"];
     // 未申请授权
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if(authStatus == AVAuthorizationStatusNotDetermined){
-        
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
             if (granted == NO) return;
             [self createSessionAttribute];
             [self.session startRunning];
         }];
     }
-    if (authStatus == AVAuthorizationStatusDenied) [UIAlertAction actionWithTitle:@"请在手机设置中允许本应用使用系统相机" style:UIAlertActionStyleDefault handler:nil];
+    if (authStatus == AVAuthorizationStatusDenied){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示信息"
+                                                                       message:@"请在手机设置中允许本应用使用系统相机"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self.scan startAnimation];
-    if (NO == self.session.running) [self.session startRunning];
+    if (NO == self.session.running && self.device){
+        [self.session startRunning];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -94,8 +102,8 @@
 // 设置媒体流属性
 - (void)createSessionAttribute
 {
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    [self.session addInput:[AVCaptureDeviceInput deviceInputWithDevice:device error:nil]];
+    if (self.device == nil) return;
+    [self.session addInput:[AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil]];
     
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];   // 设置代理 在主线程里刷新
@@ -123,9 +131,18 @@
     }
 }
 
+- (AVCaptureDevice *)device
+{
+    if (_device == nil){
+        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+    return _device;
+}
 - (void)startRunning
 {
-    [self.session startRunning];
     [self.scan startAnimation];
+    if (self.device){
+        [self.session startRunning];
+    }
 }
 @end

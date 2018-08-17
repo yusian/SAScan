@@ -18,17 +18,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.lightGrayColor;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
-    [self.view addGestureRecognizer:tap];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setBackgroundColor:UIColor.lightGrayColor];
+    [button setTitle:@"打开扫描" forState:UIControlStateNormal];
+    [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
+    button.bounds = CGRectMake(0, 0, 120, 44);
+    button.center = self.view.center;
+    [button addTarget:self action:@selector(scan) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
-- (void)tap
+- (void)scan
 {
     SAScanCtrl *scan = [[SAScanCtrl alloc] initWithBlock:^(NSString *string) {
-        
+        [[[UIAlertView alloc] initWithTitle:@"扫描结果"
+                                    message:string
+                                   delegate:nil
+                          cancelButtonTitle:@"知道了"
+                          otherButtonTitles:nil, nil] show];
     }];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:scan];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:scan animated:YES];
 }
 @end

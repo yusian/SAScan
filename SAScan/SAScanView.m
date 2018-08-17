@@ -1,6 +1,6 @@
 //
 //  SAScanView.m
-//  SAScanDemo
+//  SAScan
 //
 //  Created by 余西安 on 2018/8/17.
 //  Copyright © 2018年 yusian. All rights reserved.
