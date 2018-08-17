@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SAScanCtrl.h"
 
 @interface ViewController ()
 
@@ -14,16 +15,20 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor.lightGrayColor;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:tap];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)tap
+{
+    SAScanCtrl *scan = [[SAScanCtrl alloc] initWithBlock:^(NSString *string) {
+        
+    }];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:scan];
+    [self presentViewController:nav animated:YES completion:nil];
 }
-
-
 @end

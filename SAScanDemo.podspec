@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "SAScanDemo"
-  s.version      = "0.0.1"
-  s.summary      = "二维码扫描控制器"
+  s.name         = "SAScan"
+  s.version      = "0.0.3"
+  s.summary      = "一款轻量级二维码扫描组件"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?

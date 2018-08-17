@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC35021D21265A4A00EC6574 /* SAScanCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35021C21265A4A00EC6574 /* SAScanCtrl.m */; };
+		CC35021F2126683200EC6574 /* sascan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC35021E2126683200EC6574 /* sascan.bundle */; };
 		CC69FBA321264F2900D7D6FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA221264F2900D7D6FD /* AppDelegate.m */; };
 		CC69FBA621264F2900D7D6FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA521264F2900D7D6FD /* ViewController.m */; };
 		CC69FBA921264F2900D7D6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC69FBA721264F2900D7D6FD /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		CC35021B21265A4A00EC6574 /* SAScanCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAScanCtrl.h; sourceTree = "<group>"; };
 		CC35021C21265A4A00EC6574 /* SAScanCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAScanCtrl.m; sourceTree = "<group>"; };
+		CC35021E2126683200EC6574 /* sascan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sascan.bundle; sourceTree = "<group>"; };
 		CC69FB9E21264F2900D7D6FD /* SAScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC69FBA121264F2900D7D6FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC69FBA221264F2900D7D6FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		CC35021A21265A3600EC6574 /* SAScan */ = {
 			isa = PBXGroup;
 			children = (
+				CC35021E2126683200EC6574 /* sascan.bundle */,
 				CC35021B21265A4A00EC6574 /* SAScanCtrl.h */,
 				CC35021C21265A4A00EC6574 /* SAScanCtrl.m */,
 			);
@@ -143,6 +146,7 @@
 			files = (
 				CC69FBAE21264F2A00D7D6FD /* LaunchScreen.storyboard in Resources */,
 				CC69FBAB21264F2A00D7D6FD /* Assets.xcassets in Resources */,
+				CC35021F2126683200EC6574 /* sascan.bundle in Resources */,
 				CC69FBA921264F2900D7D6FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,13 +304,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89Z9A2LYU2;
 				INFOPLIST_FILE = SAScanDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusian.SAScanDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,13 +322,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89Z9A2LYU2;
 				INFOPLIST_FILE = SAScanDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusian.SAScanDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
