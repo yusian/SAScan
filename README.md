@@ -14,7 +14,7 @@ A、查找当前最新版本：终端中切换到工程根目录，输入`pod se
 B、在工程的Podfile文件中添加`pod 'SAScan', '~> x.x.x'`，比如：<br/>
 ```
 target 'MyApp' do
-  pod 'SAScan', '~> 0.0.5'
+  pod 'SAScan', '~> 0.0.7';
 end
 ```
 C、保存Podfile的更改后，更新pod：`pod update`
@@ -27,11 +27,7 @@ A、下载git项目中的SAScan目录，在需要使用的地方直接`imprt "SA
 ```
 SAScanCtrl *scan = [[SAScanCtrl alloc] initWithBlock:^(NSString *string) {
     // 处理扫描后的输出结果
-    [[[UIAlertView alloc] initWithTitle:@"扫描结果"
-                                message:string
-                               delegate:nil
-                      cancelButtonTitle:@"知道了"
-                      otherButtonTitles:nil, nil] show];
+    NSLog(@"%@", string);
 }];
 [self.navigationController pushViewController:scan animated:YES];
 ```
