@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SAScan"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "一款轻量级二维码扫描组件"
 
   # This description is used to generate tags and improve search results.
@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
   s.source_files  = "SAScan", "SAScan/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "SAScan/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "SAScan/*.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

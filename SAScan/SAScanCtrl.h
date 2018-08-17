@@ -14,11 +14,3 @@ typedef void (^SAScanBlock)(NSString *string);
 - (instancetype)initWithBlock:(SAScanBlock)block;
 - (instancetype)initWithBlock:(SAScanBlock)block autoPop:(BOOL)aBool;
 @end
-
-
-
-@interface SAScan : UIView
-@property (nonatomic, strong) UIImageView *scanLine;
-- (void)startAnimation;
-- (void)stopAnimation;
-@end

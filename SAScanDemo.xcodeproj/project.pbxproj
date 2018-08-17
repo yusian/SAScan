@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC35021D21265A4A00EC6574 /* SAScanCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35021C21265A4A00EC6574 /* SAScanCtrl.m */; };
 		CC35021F2126683200EC6574 /* sascan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC35021E2126683200EC6574 /* sascan.bundle */; };
+		CC35024421267FD200EC6574 /* SAScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC35024321267FD200EC6574 /* SAScanView.m */; };
 		CC69FBA321264F2900D7D6FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA221264F2900D7D6FD /* AppDelegate.m */; };
 		CC69FBA621264F2900D7D6FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC69FBA521264F2900D7D6FD /* ViewController.m */; };
 		CC69FBA921264F2900D7D6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC69FBA721264F2900D7D6FD /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 		CC35021B21265A4A00EC6574 /* SAScanCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAScanCtrl.h; sourceTree = "<group>"; };
 		CC35021C21265A4A00EC6574 /* SAScanCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAScanCtrl.m; sourceTree = "<group>"; };
 		CC35021E2126683200EC6574 /* sascan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sascan.bundle; sourceTree = "<group>"; };
+		CC35024221267FD200EC6574 /* SAScanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAScanView.h; sourceTree = "<group>"; };
+		CC35024321267FD200EC6574 /* SAScanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAScanView.m; sourceTree = "<group>"; };
 		CC69FB9E21264F2900D7D6FD /* SAScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC69FBA121264F2900D7D6FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC69FBA221264F2900D7D6FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,11 +50,21 @@
 		CC35021A21265A3600EC6574 /* SAScan */ = {
 			isa = PBXGroup;
 			children = (
-				CC35021E2126683200EC6574 /* sascan.bundle */,
 				CC35021B21265A4A00EC6574 /* SAScanCtrl.h */,
 				CC35021C21265A4A00EC6574 /* SAScanCtrl.m */,
+				CC35024221267FD200EC6574 /* SAScanView.h */,
+				CC35024321267FD200EC6574 /* SAScanView.m */,
+				CC3502462126803D00EC6574 /* Resources */,
 			);
 			path = SAScan;
+			sourceTree = "<group>";
+		};
+		CC3502462126803D00EC6574 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC35021E2126683200EC6574 /* sascan.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		CC69FB9521264F2900D7D6FD = {
@@ -158,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC35024421267FD200EC6574 /* SAScanView.m in Sources */,
 				CC69FBA621264F2900D7D6FD /* ViewController.m in Sources */,
 				CC35021D21265A4A00EC6574 /* SAScanCtrl.m in Sources */,
 				CC69FBB121264F2A00D7D6FD /* main.m in Sources */,
