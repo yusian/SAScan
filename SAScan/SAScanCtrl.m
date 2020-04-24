@@ -52,7 +52,7 @@
     self.scan.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.scan];
     
-    NSURL *url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"sascan.bundle/scan" ofType:@"mp3"]];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"sascan.bundle/scan" withExtension:@"mp3"];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"重试"
                                                                               style:UIBarButtonItemStylePlain
